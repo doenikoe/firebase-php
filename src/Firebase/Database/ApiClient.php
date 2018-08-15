@@ -59,7 +59,7 @@ class ApiClient
         $request = new Request($method, $uri);
 
         try {
-            return $this->httpClient->send($request, $options);
+            return $this->httpClient->sendAsync($request, $options);
         } catch (RequestException $e) {
             throw ApiException::wrapRequestException($e);
         } catch (\Throwable $e) {
